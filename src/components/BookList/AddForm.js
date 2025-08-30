@@ -59,7 +59,7 @@ export default class AddForm extends Component {
 
                     <div className="form-group">
                         <label htmlFor="year">Year</label>
-                        <input type="text" id="year" className="form-control" onChange={(event)=>this.yearChangeHandler(event)} />
+                        <input type="number" id="year" className="form-control" onChange={(event)=>this.yearChangeHandler(event)} />
                     </div>
                     <input type="submit" value="Add Book" onClick={(event) => this.submitHandler(event)} className="btn btn-warning btn-block add-btn" />
                 </form>
