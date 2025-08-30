@@ -20,7 +20,14 @@ export default class AddForm extends Component {
 
     submitHandler(event){
         event.preventDefault()
-        console.log("ok");
+
+        this.setState({
+            books: {
+                title: this.state.title,
+                author: this.state.author,
+                year: this.state.year
+            }
+        })
         
     }
 
