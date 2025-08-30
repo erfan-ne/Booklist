@@ -25,9 +25,20 @@ export default class AddForm extends Component {
     }
 
     titleChangeHandler(event){
-        console.log(event.target.value);
         this.setState({
             title: event.target.value
+        })
+    }
+
+    authorChangeHandler(event){
+        this.setState({
+            author: event.target.value
+        })
+    }
+
+    yearChangeHandler(event){
+        this.setState({
+            year: event.target.value
         })
     }
 
@@ -43,12 +54,12 @@ export default class AddForm extends Component {
 
                     <div className="form-group">
                         <label htmlFor="author">Author</label>
-                        <input type="text" id="author" className="form-control" />
+                        <input type="text" id="author" className="form-control" onChange={(event)=>this.authorChangeHandler(event)} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="year">Year</label>
-                        <input type="text" id="year" className="form-control" />
+                        <input type="text" id="year" className="form-control" onChange={(event)=>this.yearChangeHandler(event)} />
                     </div>
                     <input type="submit" value="Add Book" onClick={(event) => this.submitHandler(event)} className="btn btn-warning btn-block add-btn" />
                 </form>
