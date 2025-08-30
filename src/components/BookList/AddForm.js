@@ -66,17 +66,17 @@ export default class AddForm extends Component {
                 <form id="book-form" autoComplete="off">
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="title" className="form-control" onChange={(event)=>this.titleChangeHandler(event)} />
+                        <input type="text" id="title" className="form-control" value={this.state.title} onChange={(event)=>this.titleChangeHandler(event)} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="author">Author</label>
-                        <input type="text" id="author" className="form-control" onChange={(event)=>this.authorChangeHandler(event)} />
+                        <input type="text" id="author" className="form-control" value={this.state.author} onChange={(event)=>this.authorChangeHandler(event)} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="year">Year</label>
-                        <input type="number" id="year" className="form-control" onChange={(event)=>this.yearChangeHandler(event)} />
+                        <input type="number" id="year" className="form-control" value={this.state.year} onChange={(event)=>this.yearChangeHandler(event)} />
                     </div>
                     <input type="submit" value="Add Book" onClick={(event) => this.submitHandler(event)} className="btn btn-warning btn-block add-btn" />
                 </form>
