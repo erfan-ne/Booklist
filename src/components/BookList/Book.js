@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Book extends Component {
-    render() {
-        return (
-            <tr>
-                <th>شاهنامه</th>
-                <th>فردوسی</th>
-                <th>1254</th>
-            </tr>
-        )
-    }
+  render() {
+    const { title, author, year } = this.props;
+    return (
+      <tr>
+        <th>{title}</th>
+        <th>{author}</th>
+        <th>{year}</th>
+      </tr>
+    );
+  }
 }
