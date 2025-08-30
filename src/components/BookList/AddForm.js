@@ -14,21 +14,26 @@ export default class AddForm extends Component {
             year: '',
         }
 
-        // this.titleChangeHandler = this.titleChangeHandler.bind(this)
-
     }
 
     submitHandler(event){
         event.preventDefault()
 
         if(this.state.title && this.state.author && this.state.year){
-            this.setState({
-                books: {
+            this.setState((prevState)=>({
+                books: [
+                    ...prevState.books,
+                    {
                     title: this.state.title,
                     author: this.state.author,
                     year: this.state.year
-                }
-            })
+                    }
+                ],
+
+                title:'',
+                author:'',
+                year:''
+            }))
         } else {
             alert("please complete the form")
         }
@@ -84,7 +89,15 @@ export default class AddForm extends Component {
                         </tr>
                     </thead>
                     <tbody id="book-list">
-                        <Book />
+                        {this.state.books.map((book , index) =>(
+                            <Book 
+                                key={index}
+                                title={book.title}
+                                author={book.author}
+                                year={book.year}
+                            />
+                        ))}
+                        
                     </tbody>
                 </table>
 
