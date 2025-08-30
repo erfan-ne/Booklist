@@ -21,13 +21,18 @@ export default class AddForm extends Component {
     submitHandler(event){
         event.preventDefault()
 
-        this.setState({
-            books: {
-                title: this.state.title,
-                author: this.state.author,
-                year: this.state.year
-            }
-        })
+        if(this.state.title && this.state.author && this.state.year){
+            this.setState({
+                books: {
+                    title: this.state.title,
+                    author: this.state.author,
+                    year: this.state.year
+                }
+            })
+        } else {
+            alert("please complete the form")
+        }
+
         
     }
 
