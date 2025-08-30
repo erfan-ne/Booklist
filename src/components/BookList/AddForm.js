@@ -14,30 +14,37 @@ export default class AddForm extends Component {
             year: '',
         }
 
+        this.submitHandler = this.submitHandler.bind(this)
+    }
+
+    submitHandler(event){
+        event.preventDefault()
+        console.log("ok");
+        
     }
 
 
     render() {
         return (
             <>
-                <form id="book-form" autocomplete="off">
+                <form id="book-form" autoComplete="off">
                     <div className="form-group">
-                        <label for="title">Title</label>
+                        <label htmlFor="title">Title</label>
                         <input type="text" id="title" className="form-control" />
                     </div>
 
                     <div className="form-group">
-                        <label for="author">Author</label>
+                        <label htmlFor="author">Author</label>
                         <input type="text" id="author" className="form-control" />
                     </div>
 
                     <div className="form-group">
-                        <label for="year">Year</label>
+                        <label htmlFor="year">Year</label>
                         <input type="text" id="year" className="form-control" />
                     </div>
-                    <input type="submit" value="Add Book" className="btn btn-warning btn-block add-btn" />
+                    <input type="submit" value="Add Book" onClick={(event) => this.submitHandler (event)} className="btn btn-warning btn-block add-btn" />
                 </form>
-                <table class="table table-striped mt-5 text-center">
+                <table className="table table-striped mt-5 text-center">
                     <thead>
                         <tr>
                             <th>Title</th>
