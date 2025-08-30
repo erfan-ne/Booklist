@@ -14,7 +14,8 @@ export default class AddForm extends Component {
             year: '',
         }
 
-        this.submitHandler = this.submitHandler.bind(this)
+        // this.titleChangeHandler = this.titleChangeHandler.bind(this)
+
     }
 
     submitHandler(event){
@@ -23,14 +24,13 @@ export default class AddForm extends Component {
         
     }
 
-
     render() {
         return (
             <>
                 <form id="book-form" autoComplete="off">
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="title" className="form-control" />
+                        <input type="text" id="title" className="form-control"/>
                     </div>
 
                     <div className="form-group">
@@ -42,7 +42,7 @@ export default class AddForm extends Component {
                         <label htmlFor="year">Year</label>
                         <input type="text" id="year" className="form-control" />
                     </div>
-                    <input type="submit" value="Add Book" onClick={(event) => this.submitHandler (event)} className="btn btn-warning btn-block add-btn" />
+                    <input type="submit" value="Add Book" onClick={(event) => this.submitHandler(event)} className="btn btn-warning btn-block add-btn" />
                 </form>
                 <table className="table table-striped mt-5 text-center">
                     <thead>
