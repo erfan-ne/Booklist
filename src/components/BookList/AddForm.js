@@ -24,13 +24,19 @@ export default class AddForm extends Component {
         
     }
 
+    titleChangeHandler(event){
+        console.log(event.target.value);
+        
+    }
+
+
     render() {
         return (
             <>
                 <form id="book-form" autoComplete="off">
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
-                        <input type="text" id="title" className="form-control"/>
+                        <input type="text" id="title" className="form-control" onChange={(event)=>this.titleChangeHandler(event)} />
                     </div>
 
                     <div className="form-group">
