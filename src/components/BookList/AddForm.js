@@ -26,7 +26,9 @@ export default class AddForm extends Component {
 
     titleChangeHandler(event){
         console.log(event.target.value);
-        
+        this.setState({
+            title: event.target.value
+        })
     }
 
 
