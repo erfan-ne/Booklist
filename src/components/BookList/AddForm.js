@@ -20,6 +20,12 @@ export default class AddForm extends Component {
         event.preventDefault()
 
         if(this.state.title && this.state.author && this.state.year){
+            if (!/^\d{4}$/.test(this.state.year)) {
+                alert("Year must be a 4-digit number")
+                return
+            }
+
+
             this.setState((prevState)=>({
                 books: [
                     ...prevState.books,
