@@ -19,6 +19,8 @@ export default class AddForm extends Component {
     submitHandler(event){
         event.preventDefault()
 
+        let {title, author, year} = this.state
+
         if(this.state.title && this.state.author && this.state.year){
             if (!/^\d{4}$/.test(this.state.year)) {
                 alert("Year must be a 4-digit number")
@@ -30,9 +32,10 @@ export default class AddForm extends Component {
                 books: [
                     ...prevState.books,
                     {
-                    title: this.state.title,
-                    author: this.state.author,
-                    year: this.state.year
+                    id: this.state.books.length + 1,
+                    title,
+                    author,
+                    year
                     }
                 ],
 
@@ -95,9 +98,9 @@ export default class AddForm extends Component {
                         </tr>
                     </thead>
                     <tbody id="book-list">
-                        {this.state.books.map((book , index) =>(
+                        {this.state.books.map((book) =>(
                             <Book 
-                                key={index}
+                                key={book.id}
                                 title={book.title}
                                 author={book.author}
                                 year={book.year}
