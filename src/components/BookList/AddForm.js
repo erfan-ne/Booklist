@@ -21,8 +21,8 @@ export default class AddForm extends Component {
 
         let {title, author, year} = this.state
 
-        if(this.state.title && this.state.author && this.state.year){
-            if (!/^\d{4}$/.test(this.state.year)) {
+        if(title , author, year){
+            if (!/^\d{4}$/.test(year)) {
                 alert("Year must be a 4-digit number")
                 return
             }
